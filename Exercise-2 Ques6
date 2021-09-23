@@ -1,0 +1,11 @@
+fun main(args: Array<String>) {  
+  val list = mutableListOf<Int>()
+println("list.isEmpty() is ${list.isEmpty()}") // true
+
+list.addAll(listOf(1, 2, 3))
+println(list) 
+
+list.set(1,7)
+println(list) 
+  
+}  
