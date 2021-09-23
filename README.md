@@ -1,2 +1,2 @@
-# KotlinQuestion22Sept21
+# KotlinQuestions
 Exercise-questions
