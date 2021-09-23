@@ -1,0 +1,22 @@
+class Myself {  
+    var firstname: String = "Anshita"
+    var secondname: String = "Sharma"
+    var age:Int = 24  
+
+    init {  
+       println(firstname)  
+    }  
+  
+    init {  
+       println(secondname) 
+    }  
+  
+    companion object {  
+        fun age() = println(age)
+     }  
+  
+}  
+fun main(args: Array<String>){  
+    val obj = Myself()
+    obj.age()
+}  
