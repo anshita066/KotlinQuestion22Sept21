@@ -1,0 +1,37 @@
+open class Bank {  
+    
+    open fun getDetails() {  
+  
+    }  
+}  
+class SBI: Bank() {  
+    override fun getDetails() {  
+    println("SBI Bank")
+    println("rate of interest : 3.5")
+    }  
+}  
+
+class BOI: Bank() {  
+    override fun getDetails() {  
+    println("BOI Bank")
+    println("rate of interest : 4")
+    }  
+}  
+class ICICI: Bank() {  
+    override fun getDetails() {  
+    println("ICICI Bank")
+    println("rate of interest : 3")
+    }  
+}  
+
+fun main(args: Array<String>) {  
+val sbi = SBI()  
+    sbi.getDetails()   
+    
+val boi = BOI()  
+    boi.getDetails() 
+    
+val icici = ICICI()  
+    icici.getDetails() 
+
+} 
