@@ -1,0 +1,37 @@
+class Operation{
+
+    fun calc(a:Int, b:Int, c:Int){
+        println("calc($a,$b,$c) = ${a+b+c}")
+    }
+
+    fun calc(a:Double, b:Double){
+        println("calc($a,$b) = ${a+b}")
+    }
+
+    fun calc(a:Int, b:Int){
+        println("calc($a,$b) = ${a*b}")
+    }
+    
+    fun calc(str1:String, str2:String){
+        println("concatenated string is: " +str1 + " " + str2)
+    }
+    
+    fun calc(str1:String, str2:String, str3:String){
+        println("concatenated string is: " +str1 + " " + str2 + " " + str3)
+    }
+}
+
+fun main(args:Array<String>){
+
+    val operation = Operation()
+
+    operation.calc(10,20,30)
+
+    operation.calc(4.5,5.5)
+
+    operation.calc(5,6)
+    
+    operation.calc("Hello","World")
+    
+    operation.calc("Good", "Morning", "Anshita")
+}
