@@ -1,34 +1,55 @@
-interface Author {
-    fun type() { print("Author1") }
-    fun name()
+abstract class Author {
+    var name: String = "Default name"
+    var type: String = "Default type"
+    
+    val fullName: String
+        get() = "$name of type $type"
 }
+
+class BookTitle: Author()
+class Best: Author()
 
 interface Book {
-    fun type() { print("Book1") }
-    fun name() { print("Compiler Design") }
-}
+    var name: String
+        get() = names[this] ?: "Default name"
+        set(value) { names[this] = value }
 
-class Change : Author {
-    override fun name() { print("Operating System") }
-}
+    var type: String
+        get() = types[this] ?: "Default type"
+        set(value) { types[this] = value }
 
-class Demo : Author, Book {
-    override fun type() {
-        super<Author>.type()
-        super<Book>.type()
-    }
+    val fullName: String
+        get() = "$name of type $type"
 
-    override fun name() {
-        super<Book>.name()
+    companion object {
+         private val names = mutableMapOf<Any, String>()
+         private val types = mutableMapOf<Any, String>()
     }
 }
 
-data class Person(val name: String) {
-    var book: String = "Borrowed"
-}
+class Type: Book
+class Price: Book
 
-fun main(args:Array<String>){
-  val person1 = Person("John")
-  val obj1 = Change()
-  val obj2 = Demo()
+fun main(args:Array<String>) {
+    val BookTitle = BookTitle()
+    BookTitle.name = "Computers"
+    BookTitle.type = "Networking"
+
+    val best = Best()
+    best.name = "ABC"
+    BookTitle.type = "Computers"
+
+    print(BookTitle.fullName) 
+    print(best.fullName) 
+
+    val type = Type()
+    type.name = "Data communications and Networking"
+    type.type = "Engineering"
+
+    val dog = Dog()
+    price.name = "900"
+    price.type = "expensive"
+
+    print(type.fullName) 
+    print(price.fullName)
 }
