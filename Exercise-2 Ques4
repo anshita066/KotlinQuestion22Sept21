@@ -1,0 +1,34 @@
+interface Author {
+    fun type() { print("Author1") }
+    fun name()
+}
+
+interface Book {
+    fun type() { print("Book1") }
+    fun name() { print("Compiler Design") }
+}
+
+class Change : Author {
+    override fun name() { print("Operating System") }
+}
+
+class Demo : Author, Book {
+    override fun type() {
+        super<A>.type()
+        super<Book>.type()
+    }
+
+    override fun name() {
+        super<Book>.name()
+    }
+}
+
+data class Person(val name: String) {
+    var book: String = "Borrowed"
+}
+
+fun main(args:Array<String>){
+  val person1 = Person("John")
+  val obj1 = Change()
+  val obj2 = Demo()
+}
