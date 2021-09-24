@@ -14,7 +14,7 @@ class Change : Author {
 
 class Demo : Author, Book {
     override fun type() {
-        super<A>.type()
+        super<Author>.type()
         super<Book>.type()
     }
 
