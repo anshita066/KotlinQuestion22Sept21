@@ -1,22 +1,26 @@
-
 fun main(args:Array<String>){
-  val numbers = intArrayOf(1, 2, 3)
-  var list:MutableList<String> = printNumbers(*numbers)
-  println(list)
+  val marks_in_Eng:Int = 75
+  val marks_in_Hindi:Int = 81
+  val marks_in_Sci:Int = 90
+  val marks_in_Math:Int = 93
+  val marks_in_SST:Int = 87
+    
+  val grade:String = printNumbers(marks_in_Eng, marks_in_Hindi, marks_in_Sci, marks_in_Math, marks_in_SST)
+  println(grade)
 }
 
-fun printNumbers(vararg numbers: Int):MutableList<String> {
+fun printNumbers(eng:Int, hindi:Int, sci:Int, math:Int, sst:Int):String {
   
-    var list:MutableList<String>
-    for (number in numbers) {
-        if(number in 50..60)
-          list.add("Good")
-        else if(number in 60..70)
-          list.add("Very Good")
-        else if(number in 70..80)
-          list.add("Excellent")
-        else if(number in 80..100)
-          list.add("Rockstar")
-    }
-    return list
+    var str:String = "null"
+    val avg:Int =(eng + hindi + sci + math + sst)/5
+         if(avg in 50..60)
+          str = "Good"
+        else if(avg in 60..70)
+          str = "Very Good"
+        else if(avg in 70..80)
+          str = "Excellent"
+        else if(avg in 80..100)
+          str = "Rockstar"
+    
+    return str
 }
