@@ -12,6 +12,7 @@ class Myself {
   
     companion object {  
     fun age():Int {
+        println("24")
         return 24;
         }
      }  
@@ -19,5 +20,5 @@ class Myself {
 }  
 fun main(args: Array<String>){  
     val obj = Myself()
-    obj.age()
+    Myself.age()
 }  
