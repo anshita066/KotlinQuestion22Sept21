@@ -3,7 +3,7 @@ abstract class Author {
     var type: String = "Default type"
     
     val fullName: String
-        get() = "$name of type $type"
+        get() = "$name is :  $type"
 }
 
 class BookTitle: Author()
@@ -19,7 +19,7 @@ interface Book {
         set(value) { types[this] = value }
 
     val fullName: String
-        get() = "$name of type $type"
+        get() = "$name is: $type"
 
     companion object {
          private val names = mutableMapOf<Any, String>()
@@ -27,29 +27,29 @@ interface Book {
     }
 }
 
-class Type: Book
+class Typeofbook: Book
 class Price: Book
 
 fun main(args:Array<String>) {
     val BookTitle = BookTitle()
-    BookTitle.name = "Computers"
+    BookTitle.name = "Title of book"
     BookTitle.type = "Networking"
 
     val best = Best()
-    best.name = "ABC"
-    BookTitle.type = "Computers"
+    best.name = "Best Book"
+    best.type = "DCN"
 
-    print(BookTitle.fullName) 
-    print(best.fullName) 
+    print(BookTitle.fullName + "\n") 
+    print(best.fullName + "\n") 
 
-    val type = Type()
-    type.name = "Data communications and Networking"
-    type.type = "Engineering"
+    val typeofbook = Typeofbook()
+    typeofbook.name = "Data communications and Networking"
+    typeofbook.type = "Network Engineering"
 
-    val dog = Dog()
-    price.name = "900"
+    val price = Price()
+    price.name = "Price"
     price.type = "expensive"
 
-    print(type.fullName) 
-    print(price.fullName)
+    print(typeofbook.fullName + "\n") 
+    print(price.fullName + "\n")
 }
